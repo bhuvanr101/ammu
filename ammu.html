@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, [Her Name]!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8c291, #fad390);
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            padding: 50px 20px;
+            background: #ffeaa7;
+            border-bottom: 5px solid #f6e58d;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown {
+            font-size: 2em;
+            color: #e74c3c;
+        }
+
+        .playlist {
+            margin-top: 20px;
+        }
+
+        .playlist audio {
+            width: 100%;
+        }
+
+        button {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #c0392b;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            font-size: 0.9em;
+            background: #ffeaa7;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Happy Birthday, [Her Name]!</h1>
+    <p>Welcome to your special day! Here's something made just for you. 💖</p>
+</header>
+
+<section>
+    <h2>A Letter to You</h2>
+    <p>Dear [Her Name],</p>
+    <p>You bring so much joy and love into my life. On your birthday, I want you to know how truly special you are. This site is just a small token of my love for you. Here's to celebrating you today and every day! 🎉</p>
+</section>
+
+<section>
+    <h2>Our Cherished Memories</h2>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300" alt="Memory 1">
+        <img src="https://via.placeholder.com/300" alt="Memory 2">
+        <img src="https://via.placeholder.com/300" alt="Memory 3">
+    </div>
+</section>
+
+<section>
+    <h2>Countdown to the Surprise!</h2>
+    <div class="countdown" id="countdown"></div>
+</section>
+
+<section>
+    <h2>Enjoy Your Favorite Playlist</h2>
+    <div class="playlist">
+        <audio controls>
+            <source src="your-favorite-song.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</section>
+
+<section>
+    <h2>Your Gift</h2>
+    <button id="giftButton">Open Your Gift</button>
+    <p id="giftMessage" style="display:none; margin-top: 20px;">🎁 Surprise! I've planned something special for us. Check your phone! 💌</p>
+</section>
+
+<footer>
+    Made with ❤️ by [Your Name].
+</footer>
+
+<script>
+    // Countdown Timer
+    const countdownElement = document.getElementById('countdown');
+    const eventDate = new Date('2024-12-01T00:00:00'); // Change to the surprise date/time
+    const interval = setInterval(() => {
+        const now = new Date();
+        const diff = eventDate - now;
+
+        if (diff <= 0) {
+            clearInterval(interval);
+            countdownElement.textContent = "It's time for the surprise! 🎉";
+        } else {
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+    }, 1000);
+
+    // Gift Button
+    document.getElementById('giftButton').addEventListener('click', () => {
+        document.getElementById('giftMessage').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
