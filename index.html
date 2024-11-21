@@ -5,73 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday, [Her Name]!</title>
     <style>
+        /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f8c291, #fad390);
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
             color: #333;
             text-align: center;
+            overflow-x: hidden;
         }
 
         header {
-            padding: 50px 20px;
-            background: #ffeaa7;
-            border-bottom: 5px solid #f6e58d;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ffeaa7, #f6e58d);
+            border-bottom: 5px solid #ffbe76;
+            animation: fadeInDown 1.5s ease-out;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
+            color: #e74c3c;
+            text-shadow: 2px 2px #fff;
         }
 
         section {
-            padding: 20px;
+            padding: 30px;
             margin: 20px auto;
-            max-width: 800px;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            animation: fadeInUp 1.5s ease-out;
         }
 
         section h2 {
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 20px;
+            color: #e84393;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .gallery img {
             width: 100%;
-            max-width: 300px;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Countdown */
         .countdown {
-            font-size: 2em;
-            color: #e74c3c;
+            font-size: 2.5em;
+            color: #d63031;
+            font-weight: bold;
         }
 
-        .playlist {
-            margin-top: 20px;
-        }
-
-        .playlist audio {
-            width: 100%;
-        }
-
+        /* Button */
         button {
-            background: #e74c3c;
+            background: linear-gradient(135deg, #ff7675, #fd79a8);
             color: #fff;
             border: none;
-            padding: 10px 20px;
-            font-size: 1em;
+            padding: 15px 30px;
+            font-size: 1.2em;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         button:hover {
-            background: #c0392b;
+            background: linear-gradient(135deg, #d63031, #e84393);
+            transform: scale(1.1);
+        }
+
+        #giftMessage {
+            font-size: 1.5em;
+            color: #2d3436;
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         footer {
@@ -79,50 +111,81 @@
             padding: 10px;
             font-size: 0.9em;
             background: #ffeaa7;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Happy Birthday, [Her Name]!</h1>
-    <p>Welcome to your special day! Here's something made just for you. 💖</p>
+    <h1>Happy Birthday, [Her Name]! 🎉</h1>
+    <p>Welcome to your special surprise!</p>
 </header>
 
 <section>
     <h2>A Letter to You</h2>
     <p>Dear [Her Name],</p>
-    <p>You bring so much joy and love into my life. On your birthday, I want you to know how truly special you are. This site is just a small token of my love for you. Here's to celebrating you today and every day! 🎉</p>
+    <p>You are my sunshine, my happiness, and my greatest blessing. I created this just for you to remind you how much you mean to me. Here's to celebrating your day in the most special way. 💖</p>
 </section>
 
 <section>
     <h2>Our Cherished Memories</h2>
     <div class="gallery">
-        <img src="https://via.placeholder.com/300" alt="Memory 1">
-        <img src="https://via.placeholder.com/300" alt="Memory 2">
-        <img src="https://via.placeholder.com/300" alt="Memory 3">
+        <img src="https://via.placeholder.com/280" alt="Memory 1">
+        <img src="https://via.placeholder.com/280" alt="Memory 2">
+        <img src="https://via.placeholder.com/280" alt="Memory 3">
     </div>
 </section>
 
 <section>
-    <h2>Countdown to the Surprise!</h2>
+    <h2>Countdown to the Surprise</h2>
     <div class="countdown" id="countdown"></div>
 </section>
 
 <section>
     <h2>Enjoy Your Favorite Playlist</h2>
-    <div class="playlist">
-        <audio controls>
-            <source src="your-favorite-song.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+    <audio controls style="width: 100%; border-radius: 10px;">
+        <source src="your-favorite-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </section>
 
 <section>
     <h2>Your Gift</h2>
     <button id="giftButton">Open Your Gift</button>
-    <p id="giftMessage" style="display:none; margin-top: 20px;">🎁 Surprise! I've planned something special for us. Check your phone! 💌</p>
+    <p id="giftMessage">🎁 Surprise! I’ve planned something amazing for us. Check your phone for the details! 💌</p>
 </section>
 
 <footer>
